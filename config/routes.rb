@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'welcome/index'
+
+  resources :questions do
+    resources :answers, :comments, :votes, shallow: true
+  end
+
+  resources :users do
+    resources :questions, :answers, :comments, :votes, shallow: true
+  end
+
+  root 'welcome#index'
 end
