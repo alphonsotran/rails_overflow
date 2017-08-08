@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get 'users/index'
 
   resources :questions do
     resources :answers, :comments, :votes, shallow: true
@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resources :questions, :answers, :comments, :votes, shallow: true
   end
 
-  root 'welcome#index'
+  root 'user#index'
 end

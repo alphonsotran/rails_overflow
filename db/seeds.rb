@@ -6,13 +6,13 @@ User.destroy_all
 
 #User seeds
 
-User.create!({email:"test@test.com", hash_password:"password", username: "tester"})
+User.create!({email:"test@test.com", password:"password", username: "tester"})
 
 19.times do
   User.create!({
     email: Faker::Internet.safe_email,
     username: Faker::Internet.user_name,
-    hash_password: "password"
+    password: "password"
     })
 end
 
